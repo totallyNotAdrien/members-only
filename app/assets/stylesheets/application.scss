@@ -12,6 +12,17 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
  */
 
  @import "bulma";
+
+ .navbar-brand .title
+ {
+   color: white;
+ }
+
+ .notifcation:not(:last-child)
+ {
+   margin-bottom: 0;
+ }

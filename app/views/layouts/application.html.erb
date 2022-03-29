@@ -38,7 +38,8 @@
           <div class="navbar-item">
             <div class="field is-grouped">
               <% if user_signed_in? %>
-                <%= link_to current_user.username, edit_user_registration_path, class: "control button is-info is-inverted" %>
+                <%= link_to "New Post", new_post_path, class: "control button is-info is-inverted" %>
+                <%= link_to current_user.username, edit_user_registration_path, class: "control button is-info" %>
                 <%= link_to "Log out", destroy_user_session_path, class: "control button is-info", data:{"turbo-method": :delete} %>
               <% else %>
                 <%= link_to "Log In", new_user_session_path, class: "control button is-info" %>

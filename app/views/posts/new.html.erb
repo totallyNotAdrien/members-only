@@ -1,9 +1,22 @@
-<h1>New post</h1>
+<div class="column is-half is-offset-one-quarter">
+  <%= simple_form_for(@post) do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-<%= render "form", post: @post %>
+    <div class="field">
+      <div class="control">
+        <%= f.input :body, label: "Post your secrets...Or not", input_html: {class: "textarea"}, 
+          wrapper: false, label_html:{class: "label"}, placeholder: "Secrets go here..." %>
+      </div>
+    </div>
+    <%= f.button :submit, class: "button is-info" %>
+  <% end %>
 
-<br>
+  <br>
 
-<div>
-  <%= link_to "Back to posts", posts_path %>
+  <div>
+    <%= link_to "Back to posts", posts_path %>
+  </div>
 </div>
+
+
